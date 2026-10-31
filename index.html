@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TN Gas Safety Monitor</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,sans-serif;background:#0b1220;color:#e2e8f0}
+header{background:#111a2e;border-bottom:1px solid #334155;padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+h1{font-size:18px;margin:0 auto 0 0}h2{font-size:16px;margin:0 0 8px}main{max-width:1000px;margin:auto;padding:12px}
+button,select{background:#1e293b;color:#e2e8f0;border:1px solid #475569;border-radius:6px;padding:7px 10px;font-size:14px;cursor:pointer}
+select{width:100%;max-width:380px}.box{background:#111a2e;border:1px solid #334155;border-radius:8px;padding:12px;margin-bottom:12px}
+.bdg{padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700;color:#000;white-space:nowrap}.sim{background:#a78bfa}
+#banner{background:#78350f;color:#fde68a;padding:6px 14px;font-size:12px}
+.al{border-left:6px solid;background:#1e293b;border-radius:6px;padding:8px 10px;margin-bottom:8px}.al.DANGER{animation:p 1s infinite}
+@keyframes p{50%{background:#450a0a}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.co{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px;cursor:pointer}.co:hover{border-color:#38bdf8}
+.muted{color:#94a3b8;font-size:12px}table{width:100%;border-collapse:collapse}td,th{padding:5px;border-top:1px solid #334155;text-align:left;vertical-align:top}
+#detail{position:fixed;inset:0 0 0 auto;width:min(520px,100%);background:#111a2e;border-left:1px solid #475569;overflow:auto;padding:16px;display:none;z-index:10}
+#start{position:fixed;inset:0;background:#0b1220ee;display:flex;align-items:center;justify-content:center;z-index:20;text-align:center;padding:20px}
+#start button{font-size:18px;padding:14px 22px;background:#0369a1}
+</style></head><body>
+<div id="start"><div><h1 style="margin-bottom:10px">🏭 TN Gas Safety Monitor</h1><p class="muted" style="font-size:14px">Browsers block sound until you click once.<br>Click to start live monitoring with automatic alarm sound.</p><button id="go">▶ Start monitoring &amp; enable alarm sound</button></div></div>
+<header><h1>🏭 TN Gas Safety Monitor</h1><span id="sync" class="muted"></span><button id="silence">🔇 Silence</button><button id="test">🧪 Test alert</button></header>
+<div id="banner"></div>
+<main>
+<section class="box" id="alerts"></section>
+<section class="box"><h2>Select a district</h2><select id="district"></select>
+<div id="note" class="muted" style="margin-top:6px"></div></section>
+<section class="box"><h2 id="ctitle">Companies</h2><div id="companies" class="grid"></div></section>
+</main>
+<aside id="detail"></aside>
+<script src="app.js"></script></body></html>
